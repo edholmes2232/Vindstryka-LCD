@@ -35,6 +35,7 @@ typedef struct
     uint8_t bit_mask;
 } icon_map_t;
 
+// Each icon maps to a specific nibble and bit within that nibble
 static const icon_map_t _icon_map[] = {
     [VINDSTRYKA_LCD_ICON_ROOM] = {.nibble_index = 2, .bit_mask = 0x08},
     [VINDSTRYKA_LCD_ICON_WINDOW] = {.nibble_index = 6, .bit_mask = 0x08},
@@ -115,7 +116,7 @@ void VINDSTRYKA_LCD_Init(void)
 }
 
 /**
- * @brief Set a digit on the Vindstryka LCD. Clears any previous value.
+ * @brief Set a digit on the Vindstryka LCD.
  *
  * @param digit Digit index (0-VINDSTRYKA_LCD_NUM_DIGITS-1)
  * @param value Hex value to set (0x0-0xF)
@@ -178,6 +179,12 @@ void VINDSTRYKA_LCD_SetDigit(uint8_t digit, uint8_t value)
     _lcd_buffer[first_nibble + 1] = _lcd_digit_map[value] & 0xFF;    // Lower byte (ABCD)
 }
 
+/**
+ * @brief Set or clear an icon on the Vindstryka LCD.
+ *
+ * @param icon Icon to set/clear
+ * @param state 1 to set, 0 to clear
+ */
 void VINDSTRYKA_LCD_SetIcon(enum VINSTRYKA_LCD_ICON icon, uint8_t state)
 {
     if (state)
