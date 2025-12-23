@@ -17,6 +17,10 @@ git submodule update --init --recursive
 
 ### Demo
 
+[PercentageDemo.webm](https://github.com/user-attachments/assets/a2604ea4-0002-4e78-9e2d-d19f53ba0583)
+
+
+
 ### Example Code
 
 ```c
