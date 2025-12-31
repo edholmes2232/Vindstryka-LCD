@@ -6,7 +6,7 @@ This library allows you to control the segments and icons on the display, which 
 
 ## Dependencies
 
-This project leverages the [HT1621 Driver](ht1621/README.md) as a submodule to handle the low-level communication with the LCD controller.
+This project leverages the [HT1621 Driver](https://github.com/edholmes2232/ht1621) as a submodule to handle the low-level communication with the LCD controller.
 
 Must initialise submodules when cloning:
 ```bash
